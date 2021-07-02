@@ -12,11 +12,13 @@
 
   <script>
     // カウンターアプリに発展させてみましょう
+    let number = 0
 
     const display = document.getElementById("display")
     const button = document.getElementById("button")
     button.onclick = function() {
-      display.textContent = "クリックされた！！"
+      number=number+1
+      display.textContent = number
     }
   </script>
 </body>
