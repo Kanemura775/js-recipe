@@ -23,3 +23,4 @@ const genkiFunction = function(number){
     }
 }
 genkiFunction(100)
+

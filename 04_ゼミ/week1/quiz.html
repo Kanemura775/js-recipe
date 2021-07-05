@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>好きな色は？</h2>
+    <button id="red">赤</button>
+    <button id="black">黒</button>
+    <button id="yellow">黄</button>
+    <div id="display">??</div>
+
+    <script>
+      const red = document.getElementById("red")
+      const black = document.getElementById("black")
+      const yellow = document.getElementById("yellow")
+      const display = document.getElementById("display")
+      red.onclick = function() {
+        display.textContent = "正解"
+      }
+      black.onclick = function() {
+        display.textContent = "ちゃう"
+      }
+      yellow.onclick = function() {
+        display.textContent = "ちゃうねん"
+      }
+    </script>
+  </body>
+</html>
