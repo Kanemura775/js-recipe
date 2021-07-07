@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>卒業旅行どこいく？</h2>
+    <button id="hawai">ハワイ</button>
+    <button id="hangkok">韓国</button>
+    <button id="malaysia">マレーシア</button>
+    <div id="display">どこにしよう…</div>
+
+    <script>
+      const hawai = document.getElementById("hawai")
+      const hangkok = document.getElementById("hangkok")
+      const malaysia = document.getElementById("malaysia")
+      const display = document.getElementById("display")
+      hawai.onclick = function() {
+        display.textContent = "正解"
+      }
+      hangkok.onclick = function() {
+        display.textContent = "残念。もはや住みたいよね"
+      }
+      malaysia.onclick = function() {
+        display.textContent = "残念。でもご飯おいしいらしいよ"
+      }
+    </script>
+  </body>
+</html>
