@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>メモアプリ</title>
+  </head>
+  <body>
+    <input id="memo-input"></input>
+    <button id="add-button">追加</button>
+    <div id="memo-container"></div>
+
+    <script>
+    const input = document.getElementById("memo-input")
+    const button = document.getElementById("add-button")
+    const memoContainer = document.getElementById("memo-container")
+    
+    let memos = []
+    JSON.stringify(memos) // '[]'
+    //ローカルストレージのmemosキーからJSONを読み込む(=変換する)
+    const memosJson = localStorage.memos
+    //JSON.parseで配列にしてmemosを更新する
+    memos = JSON.parse(memosJson)
+    
+    if(localStorage.memos){
+      // ローカルストレージのmemosキーからJSONを読み込む。
+      const memosJson = localStorage.memos
+      // JSON.parseで配列にして、memosを更新する。
+      memos = JSON.parse(memosJason)
+    }
+
+    // ページ読み込み時に、配列の内容をブラウザに反映する。
+    for(let i = 0; i < memos.length; i++){
+      const div = document.createElement("div")
+      div.textContent = memos[i]
+      memoContainer.append(div)
+    }
+  
+    button.onclick = function() {
+      memos.push(input.value)
+     
+        const memo = document.createElement("div")
+        memo.textContent = input.value
+        memoContainer.append(memo)
+
+        localStorage.memos = memos
+        localStorage.memos = JSON.stringify(memos)
+        
+    }
