@@ -2,31 +2,31 @@
 // Vue はページの一部分（ el で指定した範囲）に適用できるので、1ページにいっぱいあっても大丈夫です
 
 new Vue({
-  el: '#v-if',
+  el: "#v-if",
   data: {
-    seen: false
+    seen: false,
   },
   methods: {
-    hyouji: function () {
+    hyouji: function() {
       this.seen = true
-    }
-  }
+    },
+  },
 })
 
 new Vue({
   el: "#v-if-sign-in",
   data: {
-    user: null
+    user: null,
   },
   methods: {
     signIn() {
       this.user = {
-        name: "ギーク太郎"
+        name: "ギーク太郎",
       }
     },
     signOut() {
       this.user = null
-    }
+    },
   },
 })
 
@@ -34,7 +34,12 @@ new Vue({
   el: "#v-for",
   data: {
     animals: ["ふらみんご", "ごりら", "らいおん"],
-  }
+  },
+  methods: {
+    addAnimal: function() {
+      this.animals.push("んらいおん")
+    },
+  },
 })
 
 new Vue({
@@ -43,7 +48,7 @@ new Vue({
     animals: ["ふらみんご", "ごりら", "らいおん"],
   },
   methods: {
-    addAnimal: function () {
+    addAnimal: function() {
       this.animals.push("んらいおん")
     },
   },
@@ -78,7 +83,7 @@ new Vue({
     ],
   },
   computed: {
-    totalPrice: function () {
+    totalPrice: function() {
       let price = 0
       for (let i = 0; i < this.items.length; i++) {
         price += this.items[i].price * this.items[i].amount
@@ -110,7 +115,7 @@ new Vue({
     ],
   },
   computed: {
-    totalPrice: function () {
+    totalPrice: function() {
       let price = 0
       for (let i = 0; i < this.items.length; i++) {
         price += this.items[i].price * this.items[i].amount
@@ -119,7 +124,7 @@ new Vue({
     },
   },
   methods: {
-    addItem: function (item) {
+    addItem: function(item) {
       item.amount += 1
     },
   },
@@ -138,14 +143,14 @@ new Vue({
     inputValue: "",
     memo: "",
   },
-  created: function () {
+  created: function() {
     const storedMemo = localStorage.memo
     if (storedMemo) {
       this.memo = storedMemo
     }
   },
   methods: {
-    save: function () {
+    save: function() {
       localStorage.memo = this.inputValue
     },
   },
