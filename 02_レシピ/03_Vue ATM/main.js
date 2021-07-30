@@ -1,42 +1,42 @@
 new Vue({
   el: "#ATM",
   data: {
-    inputValue: "",
-    zandaka:0,
+    nyuuryokugaku: 0,
+    zandaka: 0,
+    logs: [
+      {
+        date: new Date("2021-07-23T12:00:00"),
+        type: "入金",
+        money: 1000,
+      },
+      {
+        date: new Date("2021-07-23T13:00:00"),
+        type: "入金",
+        money: 1000,
+      },
+    ],
   },
-  methods:{
-    IN:function(){
-      this.zandaka += Number(this.inputValue)
-    }
-    OUT:function(){
-      this.zandaka -= Number(this.inputValue)
-    }
-  }
+  methods: {
+    nyukin: function() {
+      this.zandaka += Number(this.nyuryokugaku)
+      this.logs.push({
+        date: new Date(),
+        type: "入金",
+        money: Number(this.nyuryokugaku),
+      })
+    },
+    syukin: function() {
+      this.zandaka -= Number(this.nyuuryokugaku)
+      this.logs.push({
+        date: new Date(),
+        type: "出金",
+        money: Number(this.nyuryokugaku),
+      })
+    },
+  },
+  computed: {
+    hasZandaka: function() {
+      return !(this.zandaka > 0)
+    },
+  },
 })
-
-// new Vue({
-//   el: "#ATM",
-//   data: {
-//     nyuuryokugaku: 0,
-//     zandaka: 0,
-//     log: ["date","type","money",],
-//   },
-//   methods: {
-//   nyuukin:function () {
-//   this.zandaka += Number(this.nyuuryokugaku)
-//   const now = new Date();
-//   this.logs.push({
-//     date: now,
-//     type:"入金",
-// money: this.nyuuryokugaku,
-//   }),
-//   },
-// },
-//   syukkin:function(){
-//   this.zandaka -= Number(this.nyuuryokugaku)
-//   const now = new Date();
-//   this.logs.push({
-//     date:now,
-//     type:"出金",
-//     money:this.nyuuryokugaku,
-//   }),
