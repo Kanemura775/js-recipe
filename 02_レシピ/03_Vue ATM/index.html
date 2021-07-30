@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM</title>
+  </head>
+  <body>
+    <div id="ATM">
+      <h2>入力画面</h2>
+      <input type="number" v-model="inputValue" />
+      <div>入力額：{{ inputValue }}円</div>
+      <button v-on:click="IN">入金</button>
+      <button v-on:click="OUT">出金</button>
+      <h2>口座残高</h2>
+      <div>残高：{{ zandaka }}円</div>
+      <h2>取引記録</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue ATM</title>
+  </head>
+  <body>
+    <div id="ATM">
+      <h2>入力画面</h2>
+      <input type="number" v-model="nyuuryokugaku" />
+      <div>入力額：{{ nyuuryokugaku }}円</div>
+      <button v-on:click="nyuukin">入金</button>
+      <button v-on:click="syukkin">出金</button>
+
+      <h2>口座残高</h2>
+      <div></div>
+      <div>残高：{{ zandaka }}円</div>
+
+      <h2>取引記録</h2>
+      <div v-for="log in logs">
+        <div>日付：{{ log.date }}<br /></div>
+        <div>操作：{{ log.type }}<br /></div>
+        <div>金額：{{ log.money }}</div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html> -->
